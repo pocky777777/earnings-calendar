@@ -390,6 +390,10 @@
       "ir_url": "https://investors.credosemi.com/",
       "sources": [
         {
+          "url": "https://investors.credosemi.com/news-events/events/default.aspx",
+          "render": true
+        },
+        {
           "url": "https://investors.credosemi.com/overview/default.aspx",
           "follow": "Schedules .*Financial Results Conference Call"
         }
@@ -521,7 +525,8 @@
       "ir_url": "https://www.socionext.com/jp/ir/",
       "sources": [
         {
-          "url": "https://www.socionext.com/jp/ir/calendar.html"
+          "url": "https://www.socionext.com/jp/ir/calendar.html",
+          "tls_legacy": true
         }
       ]
     },

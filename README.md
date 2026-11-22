@@ -2,7 +2,7 @@
 
 米国でAI関連の設備投資をけん引する会社と、その影響を受ける日本の関連株、**55銘柄**（米国23・日本32）の決算予定日を1つのカレンダーで見られるWebサイトです。半導体だけでなく、AIデータセンターを作るのに必要な基板・光ファイバー・サーバー・電力まで、サプライチェーンに沿って選んでいます。日付は**各社のIRページから自動で集めて**います。
 
-- サイト: https://YOUR_NAME.github.io/earnings-calendar/
+- サイト: https://pocky777777.github.io/earnings-calendar/
 | 分野 | 米国（けん引役） | 日本（関連株） |
 |---|---|---|
 | AI半導体 | エヌビディア、AMD、ブロードコム、TSMC | ソフトバンクG、ソシオネクスト、ルネサス |
@@ -26,7 +26,7 @@
 ## 仕組み
 
 ```
-GitHub Actions（毎月15日と28日）
+GitHub Actions（毎晩 21:17 JST）
   └ scraper/update.py が companies.json の各社IRページを取得
       ・robots.txt を守り、1ページごとに3秒あける
       ・JavaScriptで表示するページ（11社）はヘッドレスブラウザで表示してから読む
@@ -107,15 +107,23 @@ python scripts/verify_jquants.py
 | `render: true` | JavaScriptで表示するページ。ブラウザで表示してから読む |
 | `follow: "文字列"` | 一覧ページの中でリンク文字が一致する記事（最大3件）も読む（決算日の告知記事など） |
 | `date_line: "after"` | 日付だけの行が項目名の**後**に来るページ（初期値は `before`） |
+| `tls_legacy: true` | 古い暗号方式しか使えないサイト。証明書の確認はそのままで、使える暗号の種類だけ広げる |
 
 追加したら、そのページの内容を `tests/fixtures/` に保存して期待する日付をテストに書いておくと、サイトが変わったときに気づけます。
+
+## 取得できない会社の調べ方
+
+データセンターからの自動アクセスを断るIRサイトがあり、GitHub Actions からは読めない会社があります。Actions タブの「**取得元の診断**」を手動で実行すると、`scripts/diagnose_targets.json` に書いた代わりの取得元の候補を順に試し、どれが読めて日付が取れるかを実行画面の Summary に表で出します（データは更新しません）。
+
+自動取得であることを名乗り（User-Agent）、robots.txt を守る方針は変えません。ブラウザのふりをしてアクセス拒否をくぐることはしません。
 
 ## 公開の手順（GitHub）
 
 1. このフォルダをGitHubの新しいリポジトリにpushする
 2. Settings → Pages → Source を「Deploy from a branch」、Branch を `main` / `/docs` にする
 3. Actions タブ →「決算予定日の更新」→「Run workflow」で初回の取得を実行し、ログが全社 `[OK]` か確認する
-4. `scraper/fetch.py` の `USER_AGENT` と `docs/index.html` の GitHub リンクの `YOUR_NAME` を自分のものに変える
+
+フォークして自分で動かす場合は、`scraper/fetch.py` の `USER_AGENT`、`docs/index.html` のGitHubリンク、このREADMEのサイトURLにあるユーザー名を自分のものに変えてください。
 
 ## 今後
 

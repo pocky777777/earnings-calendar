@@ -1,0 +1,22 @@
+name: 取得元の診断
+
+# 自動取得できない会社について、どの取得元なら GitHub から読めるかを試す。
+# データは更新しない。Actions 画面から手動で実行し、結果は実行画面の Summary に表で出る。
+on:
+  workflow_dispatch: {}
+
+permissions:
+  contents: read
+
+jobs:
+  diagnose:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with: { python-version: "3.12" }
+      - run: pip install -r requirements.txt
+      - name: JavaScriptで表示するページ用のブラウザを入れる
+        run: python -m playwright install --with-deps chromium
+      - name: 候補の取得元を順に試す
+        run: python -m scripts.diagnose

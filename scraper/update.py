@@ -30,13 +30,14 @@ def collect(company: dict, today: date) -> tuple[list[Candidate], str, str]:
     errors = []
     for src in company["sources"]:
         try:
-            html = fetch.get(src["url"], render=src.get("render", False))
+            html = fetch.get(src["url"], render=src.get("render", False), tls_legacy=src.get("tls_legacy", False))
             pages = [(src["url"], html)]
             if src.get("follow"):
                 # 一覧ページは表示が必要でも、記事ページ自体は普通のHTMLで読めることが多い
                 for link in find_follow_links(html, src["follow"], src["url"]):
                     try:
-                        pages.append((link, fetch.get(link, render=src.get("render_follow", False))))
+                        pages.append((link, fetch.get(link, render=src.get("render_follow", False),
+                                                      tls_legacy=src.get("tls_legacy", False))))
                     except fetch.FetchError as e:
                         # 記事が1本読めなくても、他の記事や一覧ページで続ける
                         print(f"    記事を読めませんでした: {e}", file=sys.stderr)
