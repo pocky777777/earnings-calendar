@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>決算予定カレンダー｜AI半導体・データセンター関連</title>
+  <meta name="description" content="AI半導体・データセンター関連の日米55社の決算予定日を、各社IRページから自動で集めて表示します。週間・月間・業界マップで確認できます。">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="wrap header-row">
+      <a class="brand" href="#week">
+        <span class="brand-name">決算予定カレンダー</span>
+        <span class="brand-sub" id="brand-sub">AI半導体・データセンター関連</span>
+      </a>
+      <nav class="tabs" aria-label="表示の切り替え">
+        <a href="#week" data-view="week">週間</a>
+        <a href="#month" data-view="month">月間</a>
+        <a href="#map" data-view="map">業界マップ</a>
+        <a href="#list" data-view="list">銘柄一覧</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="wrap main">
+    <p class="loading" id="loading">読み込み中…</p>
+
+    <!-- 週間 -->
+    <section id="view-week" class="view" hidden aria-label="週間">
+      <section class="panel" aria-labelledby="next-title">
+        <div class="panel-head">
+          <h2 id="next-title">直近の確定決算</h2>
+          <span class="muted small">時刻は日本時間</span>
+        </div>
+        <ol class="next-list" id="next"></ol>
+      </section>
+      <div class="period-tabs" id="week-tabs" role="group" aria-label="週を選ぶ"></div>
+      <div class="filters panel" data-filters></div>
+      <section class="panel" aria-labelledby="week-title">
+        <div class="panel-head">
+          <h2 id="week-title"></h2>
+          <div class="nav-buttons">
+            <button type="button" class="btn" id="week-prev">← 前の週</button>
+            <button type="button" class="btn" id="week-today">今週</button>
+            <button type="button" class="btn" id="week-next">次の週 →</button>
+          </div>
+        </div>
+        <div class="scroll-x"><div class="week-board" id="week-board"></div></div>
+        <div class="legend" data-legend></div>
+      </section>
+    </section>
+
+    <!-- 月間 -->
+    <section id="view-month" class="view" hidden aria-label="月間">
+      <div class="period-tabs" id="month-tabs" role="group" aria-label="月を選ぶ"></div>
+      <div class="filters panel" data-filters></div>
+      <div class="month-layout">
+        <section class="panel month-main" aria-labelledby="month-title">
+          <div class="panel-head">
+            <h2 id="month-title"></h2>
+            <div class="nav-buttons">
+              <button type="button" class="btn" id="month-prev" aria-label="前の月">←</button>
+              <button type="button" class="btn" id="month-today">今月</button>
+              <button type="button" class="btn" id="month-next" aria-label="次の月">→</button>
+            </div>
+          </div>
+          <div class="scroll-x"><div class="month-grid" id="month-grid" role="grid"></div></div>
+          <div class="legend" data-legend></div>
+        </section>
+        <aside class="panel day-panel" aria-labelledby="day-title">
+          <div class="panel-head column">
+            <span class="muted small">選択した日</span>
+            <h2 id="day-title"></h2>
+          </div>
+          <ul class="row-list" id="day-list"></ul>
+          <p class="note">米国株は、発表時刻が分かっているものは日本時間の日付に、分からないものは現地の日付に置いています。</p>
+        </aside>
+      </div>
+    </section>
+
+    <!-- 業界マップ -->
+    <section id="view-map" class="view" hidden aria-label="業界マップ">
+      <section class="panel" aria-labelledby="flow-title">
+        <div class="panel-head">
+          <h2 id="flow-title">AIのお金の流れと、決算の順番</h2>
+          <span class="muted small">左の会社ほど先にお金を出し、右へ発注が流れます。カードを押すとそのカテゴリに絞り込み、もう一度押すと全銘柄に戻ります。</span>
+        </div>
+        <div class="flow" id="flow"></div>
+      </section>
+      <div class="filters panel" data-filters data-market-only></div>
+      <section class="panel" aria-labelledby="cat-title">
+        <div class="panel-head">
+          <div>
+            <span class="muted small" id="cat-step"></span>
+            <h2 id="cat-title"></h2>
+            <p class="cat-desc" id="cat-desc"></p>
+          </div>
+          <div class="legend inline">
+            <span><i class="dot conf"></i>確定</span>
+            <span><i class="dot est"></i>予想</span>
+            <span><i class="bar-swatch"></i>時期のみ</span>
+          </div>
+        </div>
+        <div class="scroll-x"><div class="timeline" id="timeline"></div></div>
+        <p class="note">オレンジの縦線が今日。米国株は時刻が分かっているものは日本時間の日付です。</p>
+      </section>
+    </section>
+
+    <!-- 銘柄一覧 -->
+    <section id="view-list" class="view" hidden aria-label="銘柄一覧">
+      <div class="filters panel" data-filters></div>
+      <section class="panel" aria-labelledby="list-title">
+        <div class="panel-head">
+          <h2 id="list-title">掲載銘柄と取得状況</h2>
+          <span class="muted small" id="updated"></span>
+        </div>
+        <div class="scroll-x"><table class="status-table" id="status"></table></div>
+      </section>
+    </section>
+
+    <dialog id="detail" aria-labelledby="detail-title">
+      <form method="dialog"><button class="close" aria-label="閉じる">×</button></form>
+      <div id="detail-body"></div>
+    </dialog>
+  </main>
+
+  <footer class="site-footer">
+    <div class="wrap">
+      <h2>このカレンダーについて</h2>
+      <ul>
+        <li>日付は各社のIRページ（出典リンク先）から2週間ごとに自動で取得しています。会社の都合で日程が変わることがあるので、最終確認は出典でお願いします。</li>
+        <li>「予想」は、会社がまだ日程を出していない場合に、前年同期の発表日などから出した目安です。会社が日付を出すと自動で置き換わります。「1月下旬」のように時期だけ発表されている場合はその時期を表示します。</li>
+        <li>投資の助言ではありません。</li>
+      </ul>
+      <p><a href="https://github.com/YOUR_NAME/earnings-calendar">ソースコード（GitHub）</a></p>
+    </div>
+  </footer>
+
+  <script src="app.js"></script>
+</body>
+</html>

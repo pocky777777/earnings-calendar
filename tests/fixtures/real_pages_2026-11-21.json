@@ -1,0 +1,324 @@
+{
+ "lasertec_ir_calendar_rendered": {
+  "lang": "ja",
+  "url": "https://www.lasertec.co.jp/ir/calendar.html",
+  "render": true,
+  "lines": [
+   "2026年",
+   "2025年",
+   "2026年10月30日 機関投資家・アナリスト向け 2027年6月期 第1四半期決算説明会 SPACE SPACE",
+   "2026年10月30日 2027年6月期 第1四半期決算発表 SPACE SPACE",
+   "2026年08月06日 2026年6月期 通期決算発表 PDF （397KB） PDF （397KB）",
+   "2026年04月30日 2026年6月期 第3四半期決算発表 PDF （239KB） PDF （239KB）",
+   "2026年01月30日 2026年6月期 第2四半期決算発表 PDF （237KB） PDF （237KB）"
+  ]
+ },
+ "disco_ir_calendar": {
+  "lang": "ja",
+  "url": "https://www.disco.co.jp/jp/ir/calendar/",
+  "render": false,
+  "lines": [
+   "2027年",
+   "1月28日 決算2026年度 第3四半期 決算発表 (16:00 予定) イベント2026年度 第3四半期 電話会議 (アナリスト向け) 1月7日 速報2026年度 第3四半期 個別売上高および出荷額速報 (16:00 予定)",
+   "2026年",
+   "2025年",
+   "2024年"
+  ]
+ },
+ "screen_ir_calendar": {
+  "lang": "ja",
+  "url": "https://www.screen.co.jp/ir/calendar",
+  "render": false,
+  "lines": [
+   "2027年",
+   "2027年1月下旬 2027年3月期第3四半期決算発表 [予定] 2027年3月期第3四半期機関投資家・証券アナリスト向け決算説明会(オンライン開催) [予定]",
+   "2026年",
+   "2026年10月30日 2027年3月期第2四半期決算発表および機関投資家・証券アナリスト向け決算説明会(オンライン開催) 決算短信、説明会資料はこちら",
+   "2026年7月28日 2027年3月期第1四半期決算発表および機関投資家・証券アナリスト向け決算説明会(オンライン開催) 決算短信、説明会資料はこちら",
+   "2026年5月13日 2026年3月期決算発表および機関投資家・証券アナリスト向け決算説明会(オンライン開催) 決算短信、説明会資料はこちら",
+   "2026年1月30日 2026年3月期第3四半期決算発表および機関投資家・証券アナリスト向け決算説明会(オンライン開催) 決算短信、説明会資料はこちら",
+   "2025年",
+   "2025年10月31日 2026年3月期第2四半期決算発表および機関投資家・証券アナリスト向け決算説明会(オンライン開催) 決算短信、説明会資料はこちら"
+  ]
+ },
+ "kokusai_ir_calendar_rendered": {
+  "lang": "ja",
+  "url": "https://www.kokusai-electric.com/ir/calendar",
+  "render": true,
+  "lines": [
+   "2026年",
+   "2026.11.09 2027年3月期第2四半期決算発表 14時予定 SPACE SPACE",
+   "2026.11.09 決算説明会（機関投資家・アナリスト向け） SPACE SPACE",
+   "2026.08.06 2027年3月期第1四半期決算発表 SPACE SPACE",
+   "2026.05.13 2026年3月期第4四半期（通期）決算発表 SPACE SPACE",
+   "2026.02.12 2026年3月期第3四半期決算発表 SPACE SPACE",
+   "2025年",
+   "2025.11.11 2026年3月期第2四半期決算発表 SPACE SPACE"
+  ]
+ },
+ "softbankg_ir_calendar": {
+  "lang": "ja",
+  "url": "https://group.softbank/ir/calendar",
+  "render": false,
+  "lines": [
+   "2026年度（2027年3月期）",
+   "11月10日 2027年3月期 第2四半期 決算発表",
+   "8月6日 2027年3月期 第1四半期 決算発表",
+   "5月13日 2026年3月期 決算発表",
+   "2025年度（2026年3月期）",
+   "2月12日 2026年3月期 第3四半期 決算発表",
+   "11月11日 2026年3月期 第2四半期 決算発表",
+   "8月7日 2026年3月期 第1四半期 投資家向け説明会 2026年3月期 第1四半期 決算発表"
+  ]
+ },
+ "socionext_ir_calendar": {
+  "lang": "ja",
+  "url": "https://www.socionext.com/jp/ir/calendar.html",
+  "render": false,
+  "lines": [
+   "2026年10月28日 第2四半期決算発表",
+   "2026年07月29日 第1四半期決算発表",
+   "2026年04月28日 2026年3月期決算発表",
+   "2026年01月30日 第3四半期決算発表",
+   "2025年10月31日 第2四半期決算発表"
+  ]
+ },
+ "renesas_financial_calendar": {
+  "lang": "ja",
+  "url": "https://www.renesas.com/ja/about/investor-relations/events/financial-calendar",
+  "render": false,
+  "lines": [
+   "2026年度（2026年12月期）スケジュール",
+   "2026年度（2026年12月期）",
+   "2026年10月29日2026年12月期 第3四半期決算発表",
+   "2026年7月31日2026年12月期 第2四半期決算発表",
+   "2026年4月24日2026年12月期 第1四半期決算発表",
+   "2025年度（2025年12月期）",
+   "2026年2月5日2025年12月期 通期決算発表",
+   "2025年10月30日2025年12月期 第3四半期決算発表"
+  ]
+ },
+ "kioxia_ir_calendar": {
+  "lang": "ja",
+  "url": "https://www.kioxia-holdings.com/ja-jp/ir/calendar.html",
+  "render": false,
+  "lines": [
+   "IRカレンダー",
+   "2027年3月期",
+   "2026年10月30日",
+   "2027年3月期 第2四半期 決算発表",
+   "2026年7月31日",
+   "2027年3月期 第1四半期 決算発表",
+   "2026年6月2日",
+   "Investor Day",
+   "2026年3月期",
+   "2026年05月15日",
+   "2026年3月期 決算発表",
+   "2026年02月12日",
+   "2026年3月期 第3四半期 決算発表",
+   "2025年11月13日",
+   "2026年3月期 第2四半期 決算発表",
+   "2025年06月27日",
+   "第7期 定時株主総会"
+  ]
+ },
+ "shinetsu_ir_calendar": {
+  "lang": "ja",
+  "url": "https://www.shinetsu.co.jp/jp/ir/ir-calendar/",
+  "render": false,
+  "lines": [
+   "2026年",
+   "1月27日 第149期（2026年3月期） 第3四半期決算発表",
+   "3月31日 第149期 決算日",
+   "4月28日 第149期 決算発表",
+   "6月30日 第150期（2027年3月期） 第1四半期決算日",
+   "7月24日 第150期 第1四半期決算発表",
+   "9月30日 第150期 第2四半期決算日",
+   "10月27日 第150期 第2四半期決算発表",
+   "12月31日 第150期 第3四半期決算日",
+   "2025年",
+   "1月29日 第148期（2025年3月期） 第3四半期決算発表"
+  ]
+ },
+ "sumco_ir_calendar_rendered": {
+  "lang": "ja",
+  "url": "https://www.sumcosi.com/ir/event/calendar.html",
+  "render": true,
+  "lines": [
+   "2026年度",
+   "2026年11月11日 2026年12月期 第3四半期決算発表 SPACE 東京証券取引所における発表 15時30分頃を予定当ウェブサイトへの掲載 15時30分頃を予定 SPACE 東京証券取引所における発表 15時30分頃を予定当ウェブサイトへの掲載 15時30分頃を予定",
+   "2026年8月6日 2026年12月期 第2四半期決算発表 SPACE SPACE",
+   "2026年5月12日 2026年12月期 第1四半期決算発表 SPACE SPACE",
+   "2025年度",
+   "2026年2月10日 2025年12月期 決算発表 SPACE SPACE",
+   "2025年11月11日 2025年12月期 第3四半期決算発表 SPACE SPACE"
+  ]
+ },
+ "amd_ir_calendar": {
+  "lang": "en",
+  "url": "https://ir.amd.com/news-events/ir-calendar",
+  "render": false,
+  "lines": [
+   "Past Events",
+   "Nov 3, 2026 • 2:00 pm PST",
+   "AMD Fiscal Third Quarter 2026 Financial Results",
+   "Sep 11, 2026 • 8:50 am PST",
+   "KeyBanc’s Technology Leadership Forum",
+   "Aug 4, 2026 • 2:00 pm PST",
+   "AMD Fiscal Second Quarter 2026 Financial Results",
+   "Jul 23, 2026"
+  ]
+ },
+ "broadcom_events": {
+  "lang": "en",
+  "url": "https://investors.broadcom.com/company-information/events-presentations",
+  "render": false,
+  "lines": [
+   "Upcoming Events",
+   "Date Title Remind Me",
+   "12/09/2026 5:00 PM EST Q4 2026 Broadcom Earnings Conference Call Listen to Webcast Add to Outlook Add to Google Calendar"
+  ]
+ },
+ "tsmc_financial_calendar": {
+  "lang": "en",
+  "url": "https://investor.tsmc.com/english/financial-calendar",
+  "render": false,
+  "lines": [
+   "/english/monthly-revenue/2026",
+   "October 15, 2026 (Thu)",
+   "TSMC 3Q'26 Results - Earnings Conference and Conference Call",
+   "/english/quarterly-results/2026/q3",
+   "/english/monthly-revenue/2026",
+   "July 16, 2026 (Thu)",
+   "TSMC 2Q'26 Results - Earnings Conference and Conference Call",
+   "/english/quarterly-results/2026/q2",
+   "April 16, 2026 (Thu)",
+   "TSMC 1Q'26 Results - Earnings Conference and Conference Call",
+   "January 15, 2026 (Thu)",
+   "TSMC 4Q'25 Results - Earnings Conference and Conference Call"
+  ]
+ },
+ "asml_quarterly_results": {
+  "lang": "en",
+  "url": "https://investor.asml.com/quarterly-results",
+  "render": false,
+  "lines": [
+   "Q3 2026 financial results",
+   "ASML Holding NV announced its 2026 third-quarter financial results on October 14, 2026.",
+   "Read the press release"
+  ]
+ },
+ "amat_events": {
+  "lang": "en",
+  "url": "https://ir.appliedmaterials.com/events-and-presentations",
+  "render": false,
+  "lines": [
+   "Fiscal Calendar 2026",
+   "QuarterFiscal Quarter EndEarnings Call",
+   "Q1January 25February 12",
+   "Supporting Materials",
+   "Nov 12, 2026",
+   "Q4 2026 Applied Materials Earnings Conference Call",
+   "Supporting MaterialsArow1-50",
+   "Supporting Materials",
+   "Aug 13, 2026",
+   "Q3 2026 Applied Materials Earnings Conference Call",
+   "Supporting MaterialsArow1-50"
+  ]
+ },
+ "lam_events": {
+  "lang": "en",
+  "url": "https://investor.lamresearch.com/events/",
+  "render": false,
+  "date_line": "after",
+  "lines": [
+   "Lam Research Corporation 2026 Annual Meeting of Stockholders",
+   "NOV 3, 2026 AT 9:30AM",
+   "Lam Research Corporation's September 2026 Earnings Conference Call",
+   "OCT 21, 2026 AT 2:00PM",
+   "Citi 2026 Global TMT Conference",
+   "SEP 9, 2026 AT 7:10AM",
+   "Lam Research Corporation's June 2026 Earnings conference call",
+   "JUL 29, 2026 AT 2:00AM",
+   "Bernstein Strategic Decisions Conference",
+   "MAY 27, 2026 AT 7:00AM",
+   "Lam Research Corporation's March 2026 Earnings Conference Call",
+   "APR 22, 2026 AT 2:00PM",
+   "Morgan Stanley TMT Conference",
+   "MAR 3, 2026 AT 9:15AM",
+   "Lam Research Corporation's December 2025 Earnings Conference Call",
+   "JAN 28, 2026 AT 2:00PM"
+  ]
+ },
+ "kla_ir_calendar": {
+  "lang": "en",
+  "url": "https://ir.kla.com/news-events/ir-calendar",
+  "render": false,
+  "lines": [
+   "2026 Annual Meeting of Stockholders",
+   "Oct 28, 2026 2:00 pm PST",
+   "First Quarter Fiscal Year 2027 Earnings Call",
+   "Sep 11, 2026 12:30 pm EST",
+   "Citi's 2026 Global TMT Conference",
+   "Jul 28, 2026 2:00 pm PST",
+   "Fourth Quarter Fiscal Year 2026 Earnings Call",
+   "Jun 3, 2026 9:20 am PST"
+  ]
+ },
+ "micron_events_rendered": {
+  "lang": "en",
+  "url": "https://investors.micron.com/events-and-presentations/default.aspx",
+  "render": true,
+  "lines": [
+   "Micron's Post Earnings Analyst Call",
+   "Webcast Micron's Post Earnings Analyst Call, September 30, 2026, (opens in new window)",
+   "Micron's Fourth Quarter 2026 Financial Call",
+   "Webcast Micron's Fourth Quarter 2026 Financial Call, September 30, 2026, (opens in new window)",
+   "Q4 2026 Earnings Deck Open Event Link, PDF file, September 30, 2026, (opens in new window)",
+   "Micron's Third Quarter 2026 Financial Call",
+   "Q3 2026 Earnings Deck Open Event Link, PDF file, June 24, 2026, (opens in new window)"
+  ]
+ },
+ "microsoft_investor_home": {
+  "lang": "en",
+  "url": "https://www.microsoft.com/en-us/investor",
+  "render": false,
+  "date_line": "after",
+  "lines": [
+   "Next slide",
+   "Microsoft FY27 Q1 Earnings",
+   "October 28, 2026",
+   "VIEW DETAILS >",
+   "Collapse All",
+   "Know the next earnings release date The next earnings release will be announced soon.",
+   "Know the dates for the quarterly dividend Get the quarterly dividend amount, record date, ex-dividend date, payable date and history Get Details"
+  ]
+ },
+ "alphabet_announces_date_q3": {
+  "lang": "en",
+  "url": "https://abc.xyz/investor/news/news-details/2026/Alphabet-Announces-Date-of-Third-Quarter-2026-Financial-Results-Conference-Call-2026-8tpGZsLS6v/default.aspx",
+  "render": false,
+  "lines": [
+   "MOUNTAIN VIEW, Calif. (October 6, 2026) – Alphabet Inc. (NASDAQ: GOOG, GOOGL) will hold its quarterly conference call to discuss third quarter 2026 financial results on Wednesday, October 28, at 1:30pm Pacific Time (4:30pm Eastern Time).",
+   "The live webcast of the earnings conference call can be accessed here. A replay of the webcast will be available through the same link following the conference call. Please visit the Investor Relations website at abc.xyz/investor on October 28, 2026 to view the earnings release before the conference call."
+  ]
+ },
+ "meta_events_rendered": {
+  "lang": "en",
+  "url": "https://investor.atmeta.com/investor-events/default.aspx",
+  "render": true,
+  "lines": [
+   "Past Events",
+   "Oct 21, 20261:30 PM PT",
+   "Q3 2026 Earnings Call",
+   "Press Release (PDF)",
+   "Presentation (PDF)",
+   "Earnings Call Transcript (PDF)",
+   "Follow Up Call Transcript (PDF)",
+   "Jul 29, 20261:30 PM PT",
+   "Q2 2026 Earnings Call",
+   "Press Release (PDF)",
+   "Earnings Call Transcript (PDF)"
+  ]
+ }
+}

@@ -1,0 +1,915 @@
+{
+  "_comment": "掲載する会社の設定。sources は上から順に試し、決算日が取れた時点で止まる。render: JavaScriptで表示するページはブラウザで表示してから読む。follow: 一覧ページ内でリンク文字が一致する記事（新しい順に最大3件）も読む。date_line: 日付だけの行が項目名の前(before)か後(after)か。各社のページは2026-11に実際に開いて確認済み。",
+  "categories": [
+    "AI半導体",
+    "製造装置",
+    "メモリ・素材",
+    "基板・電子部品",
+    "光・電線",
+    "AIサーバー・ネットワーク",
+    "電力・冷却",
+    "AIの買い手"
+  ],
+  "companies": [
+    {
+      "id": "NVDA",
+      "name": "エヌビディア",
+      "name_en": "NVIDIA",
+      "market": "US",
+      "role": "leader",
+      "category": "AI半導体",
+      "lang": "en",
+      "tz": "America/Los_Angeles",
+      "ir_url": "https://investor.nvidia.com/",
+      "sources": [
+        {
+          "url": "https://nvidianews.nvidia.com/news?q=Sets%20Conference%20Call",
+          "follow": "Sets Conference Call"
+        }
+      ]
+    },
+    {
+      "id": "AMD",
+      "name": "AMD",
+      "name_en": "Advanced Micro Devices",
+      "market": "US",
+      "role": "leader",
+      "category": "AI半導体",
+      "lang": "en",
+      "tz": "America/Los_Angeles",
+      "ir_url": "https://ir.amd.com/",
+      "sources": [
+        {
+          "url": "https://ir.amd.com/news-events/ir-calendar"
+        }
+      ]
+    },
+    {
+      "id": "AVGO",
+      "name": "ブロードコム",
+      "name_en": "Broadcom",
+      "market": "US",
+      "role": "leader",
+      "category": "AI半導体",
+      "lang": "en",
+      "tz": "America/New_York",
+      "ir_url": "https://investors.broadcom.com/",
+      "sources": [
+        {
+          "url": "https://investors.broadcom.com/company-information/events-presentations"
+        }
+      ]
+    },
+    {
+      "id": "TSM",
+      "name": "TSMC",
+      "name_en": "Taiwan Semiconductor (ADR)",
+      "market": "US",
+      "role": "leader",
+      "category": "AI半導体",
+      "lang": "en",
+      "tz": "Asia/Taipei",
+      "ir_url": "https://investor.tsmc.com/english",
+      "sources": [
+        {
+          "url": "https://investor.tsmc.com/english/financial-calendar"
+        }
+      ]
+    },
+    {
+      "id": "ASML",
+      "name": "ASML",
+      "name_en": "ASML Holding (ADR)",
+      "market": "US",
+      "role": "leader",
+      "category": "製造装置",
+      "lang": "en",
+      "tz": "Europe/Amsterdam",
+      "ir_url": "https://investor.asml.com/",
+      "sources": [
+        {
+          "url": "https://investor.asml.com/quarterly-results"
+        }
+      ]
+    },
+    {
+      "id": "AMAT",
+      "name": "アプライド・マテリアルズ",
+      "name_en": "Applied Materials",
+      "market": "US",
+      "role": "leader",
+      "category": "製造装置",
+      "lang": "en",
+      "tz": "America/Los_Angeles",
+      "ir_url": "https://ir.appliedmaterials.com/",
+      "sources": [
+        {
+          "url": "https://ir.appliedmaterials.com/events-and-presentations"
+        }
+      ]
+    },
+    {
+      "id": "LRCX",
+      "name": "ラムリサーチ",
+      "name_en": "Lam Research",
+      "market": "US",
+      "role": "leader",
+      "category": "製造装置",
+      "lang": "en",
+      "tz": "America/Los_Angeles",
+      "ir_url": "https://investor.lamresearch.com/",
+      "sources": [
+        {
+          "url": "https://investor.lamresearch.com/events/",
+          "date_line": "after"
+        }
+      ]
+    },
+    {
+      "id": "KLAC",
+      "name": "KLA",
+      "name_en": "KLA Corporation",
+      "market": "US",
+      "role": "leader",
+      "category": "製造装置",
+      "lang": "en",
+      "tz": "America/Los_Angeles",
+      "ir_url": "https://ir.kla.com/",
+      "sources": [
+        {
+          "url": "https://ir.kla.com/news-events/ir-calendar"
+        }
+      ]
+    },
+    {
+      "id": "MU",
+      "name": "マイクロン",
+      "name_en": "Micron Technology",
+      "market": "US",
+      "role": "leader",
+      "category": "メモリ・素材",
+      "lang": "en",
+      "tz": "America/New_York",
+      "ir_url": "https://investors.micron.com/",
+      "sources": [
+        {
+          "url": "https://investors.micron.com/events-and-presentations/default.aspx",
+          "render": true
+        }
+      ]
+    },
+    {
+      "id": "MSFT",
+      "name": "マイクロソフト",
+      "name_en": "Microsoft",
+      "market": "US",
+      "role": "leader",
+      "category": "AIの買い手",
+      "lang": "en",
+      "tz": "America/Los_Angeles",
+      "ir_url": "https://www.microsoft.com/en-us/investor",
+      "sources": [
+        {
+          "url": "https://www.microsoft.com/en-us/investor",
+          "date_line": "after"
+        }
+      ]
+    },
+    {
+      "id": "GOOGL",
+      "name": "アルファベット",
+      "name_en": "Alphabet",
+      "market": "US",
+      "role": "leader",
+      "category": "AIの買い手",
+      "lang": "en",
+      "tz": "America/Los_Angeles",
+      "ir_url": "https://abc.xyz/investor/",
+      "sources": [
+        {
+          "url": "https://abc.xyz/investor/",
+          "render": true,
+          "follow": "Announces Date of"
+        }
+      ]
+    },
+    {
+      "id": "META",
+      "name": "メタ",
+      "name_en": "Meta Platforms",
+      "market": "US",
+      "role": "leader",
+      "category": "AIの買い手",
+      "lang": "en",
+      "tz": "America/Los_Angeles",
+      "ir_url": "https://investor.atmeta.com/",
+      "sources": [
+        {
+          "url": "https://investor.atmeta.com/investor-events/default.aspx",
+          "render": true
+        }
+      ]
+    },
+    {
+      "id": "AMZN",
+      "name": "アマゾン",
+      "name_en": "Amazon.com",
+      "market": "US",
+      "role": "leader",
+      "category": "AIの買い手",
+      "lang": "en",
+      "tz": "America/Los_Angeles",
+      "ir_url": "https://ir.aboutamazon.com/",
+      "sources": [
+        {
+          "url": "https://ir.aboutamazon.com/events/default.aspx",
+          "render": true,
+          "date_line": "after"
+        }
+      ]
+    },
+    {
+      "id": "ORCL",
+      "name": "オラクル",
+      "name_en": "Oracle",
+      "market": "US",
+      "role": "leader",
+      "category": "AIの買い手",
+      "lang": "en",
+      "tz": "America/Chicago",
+      "ir_url": "https://investor.oracle.com/",
+      "sources": [
+        {
+          "url": "https://investor.oracle.com/events-and-presentations/default.aspx",
+          "render": true
+        }
+      ]
+    },
+    {
+      "id": "DELL",
+      "name": "デル",
+      "name_en": "Dell Technologies",
+      "market": "US",
+      "role": "leader",
+      "category": "AIサーバー・ネットワーク",
+      "lang": "en",
+      "tz": "America/Chicago",
+      "ir_url": "https://investors.delltechnologies.com/",
+      "sources": [
+        {
+          "url": "https://investors.delltechnologies.com/news-events/events"
+        }
+      ]
+    },
+    {
+      "id": "ANET",
+      "name": "アリスタ",
+      "name_en": "Arista Networks",
+      "market": "US",
+      "role": "leader",
+      "category": "AIサーバー・ネットワーク",
+      "lang": "en",
+      "tz": "America/Los_Angeles",
+      "ir_url": "https://investors.arista.com/",
+      "sources": [
+        {
+          "url": "https://investors.arista.com/Communications/Press-Releases-and-Events/default.aspx",
+          "render": true
+        }
+      ]
+    },
+    {
+      "id": "MRVL",
+      "name": "マーベル",
+      "name_en": "Marvell Technology",
+      "market": "US",
+      "role": "leader",
+      "category": "AIサーバー・ネットワーク",
+      "lang": "en",
+      "tz": "America/Los_Angeles",
+      "ir_url": "https://investor.marvell.com/",
+      "sources": [
+        {
+          "url": "https://investor.marvell.com/news-events/ir-calendar"
+        }
+      ]
+    },
+    {
+      "id": "COHR",
+      "name": "コヒレント",
+      "name_en": "Coherent",
+      "market": "US",
+      "role": "leader",
+      "category": "光・電線",
+      "lang": "en",
+      "tz": "America/New_York",
+      "ir_url": "https://ir.coherent.com/",
+      "sources": [
+        {
+          "url": "https://ir.coherent.com/news-events/events",
+          "date_line": "after"
+        }
+      ]
+    },
+    {
+      "id": "VRT",
+      "name": "ヴァーティブ",
+      "name_en": "Vertiv",
+      "market": "US",
+      "role": "leader",
+      "category": "電力・冷却",
+      "lang": "en",
+      "tz": "America/New_York",
+      "ir_url": "https://investors.vertiv.com/",
+      "sources": [
+        {
+          "url": "https://investors.vertiv.com/events-presentations/events-presentations/default.aspx",
+          "render": true
+        }
+      ]
+    },
+    {
+      "id": "SKHY",
+      "name": "SKハイニックス",
+      "name_en": "SK hynix (ADR)",
+      "market": "US",
+      "role": "leader",
+      "category": "メモリ・素材",
+      "lang": "en",
+      "tz": "Asia/Seoul",
+      "ir_url": "https://news.skhynix.com/en/category/ir/",
+      "sources": [
+        {
+          "url": "https://news.skhynix.com/en/category/ir/",
+          "follow": "Earnings Conference Call Invitation"
+        }
+      ]
+    },
+    {
+      "id": "SNDK",
+      "name": "サンディスク",
+      "name_en": "Sandisk",
+      "market": "US",
+      "role": "leader",
+      "category": "メモリ・素材",
+      "lang": "en",
+      "tz": "America/Los_Angeles",
+      "ir_url": "https://investor.sandisk.com/",
+      "sources": [
+        {
+          "url": "https://investor.sandisk.com/news-events/events",
+          "date_line": "after"
+        }
+      ]
+    },
+    {
+      "id": "TER",
+      "name": "テラダイン",
+      "name_en": "Teradyne",
+      "market": "US",
+      "role": "leader",
+      "category": "製造装置",
+      "lang": "en",
+      "tz": "America/New_York",
+      "ir_url": "https://investors.teradyne.com/",
+      "sources": [
+        {
+          "url": "https://investors.teradyne.com/news-events/ir-calendar"
+        }
+      ]
+    },
+    {
+      "id": "CRDO",
+      "name": "クレド",
+      "name_en": "Credo Technology",
+      "market": "US",
+      "role": "leader",
+      "category": "AIサーバー・ネットワーク",
+      "lang": "en",
+      "tz": "America/Los_Angeles",
+      "ir_url": "https://investors.credosemi.com/",
+      "sources": [
+        {
+          "url": "https://investors.credosemi.com/overview/default.aspx",
+          "follow": "Schedules .*Financial Results Conference Call"
+        }
+      ]
+    },
+    {
+      "id": "8035",
+      "name": "東京エレクトロン",
+      "name_en": "Tokyo Electron",
+      "market": "JP",
+      "role": "related",
+      "category": "製造装置",
+      "lang": "ja",
+      "tz": "Asia/Tokyo",
+      "ir_url": "https://www.tel.co.jp/ir/",
+      "sources": [
+        {
+          "url": "https://www.tel.co.jp/ir/calendar/"
+        }
+      ]
+    },
+    {
+      "id": "6857",
+      "name": "アドバンテスト",
+      "name_en": "Advantest",
+      "market": "JP",
+      "role": "related",
+      "category": "製造装置",
+      "lang": "ja",
+      "tz": "Asia/Tokyo",
+      "ir_url": "https://www.advantest.com/ja/investors/",
+      "sources": [
+        {
+          "url": "https://www.advantest.com/ja/investors/ir-calendar/"
+        }
+      ]
+    },
+    {
+      "id": "6920",
+      "name": "レーザーテック",
+      "name_en": "Lasertec",
+      "market": "JP",
+      "role": "related",
+      "category": "製造装置",
+      "lang": "ja",
+      "tz": "Asia/Tokyo",
+      "ir_url": "https://www.lasertec.co.jp/ir/",
+      "sources": [
+        {
+          "url": "https://www.lasertec.co.jp/ir/calendar.html",
+          "render": true
+        }
+      ]
+    },
+    {
+      "id": "6146",
+      "name": "ディスコ",
+      "name_en": "DISCO",
+      "market": "JP",
+      "role": "related",
+      "category": "製造装置",
+      "lang": "ja",
+      "tz": "Asia/Tokyo",
+      "ir_url": "https://www.disco.co.jp/jp/ir/",
+      "sources": [
+        {
+          "url": "https://www.disco.co.jp/jp/ir/calendar/"
+        }
+      ]
+    },
+    {
+      "id": "7735",
+      "name": "SCREEN",
+      "name_en": "SCREEN Holdings",
+      "market": "JP",
+      "role": "related",
+      "category": "製造装置",
+      "lang": "ja",
+      "tz": "Asia/Tokyo",
+      "ir_url": "https://www.screen.co.jp/ir/",
+      "sources": [
+        {
+          "url": "https://www.screen.co.jp/ir/calendar"
+        }
+      ]
+    },
+    {
+      "id": "6525",
+      "name": "KOKUSAI ELECTRIC",
+      "name_en": "KOKUSAI ELECTRIC",
+      "market": "JP",
+      "role": "related",
+      "category": "製造装置",
+      "lang": "ja",
+      "tz": "Asia/Tokyo",
+      "ir_url": "https://www.kokusai-electric.com/ir/",
+      "sources": [
+        {
+          "url": "https://www.kokusai-electric.com/ir/calendar",
+          "render": true
+        }
+      ]
+    },
+    {
+      "id": "9984",
+      "name": "ソフトバンクG",
+      "name_en": "SoftBank Group",
+      "market": "JP",
+      "role": "related",
+      "category": "AI半導体",
+      "lang": "ja",
+      "tz": "Asia/Tokyo",
+      "ir_url": "https://group.softbank/ir",
+      "sources": [
+        {
+          "url": "https://group.softbank/ir/calendar"
+        }
+      ]
+    },
+    {
+      "id": "6526",
+      "name": "ソシオネクスト",
+      "name_en": "Socionext",
+      "market": "JP",
+      "role": "related",
+      "category": "AI半導体",
+      "lang": "ja",
+      "tz": "Asia/Tokyo",
+      "ir_url": "https://www.socionext.com/jp/ir/",
+      "sources": [
+        {
+          "url": "https://www.socionext.com/jp/ir/calendar.html"
+        }
+      ]
+    },
+    {
+      "id": "6723",
+      "name": "ルネサス",
+      "name_en": "Renesas Electronics",
+      "market": "JP",
+      "role": "related",
+      "category": "AI半導体",
+      "lang": "ja",
+      "tz": "Asia/Tokyo",
+      "ir_url": "https://www.renesas.com/ja/about/investor-relations",
+      "sources": [
+        {
+          "url": "https://www.renesas.com/ja/about/investor-relations/events/financial-calendar"
+        }
+      ]
+    },
+    {
+      "id": "285A",
+      "name": "キオクシア",
+      "name_en": "Kioxia Holdings",
+      "market": "JP",
+      "role": "related",
+      "category": "メモリ・素材",
+      "lang": "ja",
+      "tz": "Asia/Tokyo",
+      "ir_url": "https://www.kioxia-holdings.com/ja-jp/ir.html",
+      "sources": [
+        {
+          "url": "https://www.kioxia-holdings.com/ja-jp/ir/calendar.html"
+        }
+      ]
+    },
+    {
+      "id": "4063",
+      "name": "信越化学",
+      "name_en": "Shin-Etsu Chemical",
+      "market": "JP",
+      "role": "related",
+      "category": "メモリ・素材",
+      "lang": "ja",
+      "tz": "Asia/Tokyo",
+      "ir_url": "https://www.shinetsu.co.jp/jp/ir/",
+      "sources": [
+        {
+          "url": "https://www.shinetsu.co.jp/jp/ir/ir-calendar/"
+        }
+      ]
+    },
+    {
+      "id": "3436",
+      "name": "SUMCO",
+      "name_en": "SUMCO",
+      "market": "JP",
+      "role": "related",
+      "category": "メモリ・素材",
+      "lang": "ja",
+      "tz": "Asia/Tokyo",
+      "ir_url": "https://www.sumcosi.com/ir/",
+      "sources": [
+        {
+          "url": "https://www.sumcosi.com/ir/event/calendar.html",
+          "render": true
+        }
+      ]
+    },
+    {
+      "id": "5803",
+      "name": "フジクラ",
+      "name_en": "Fujikura",
+      "market": "JP",
+      "role": "related",
+      "category": "光・電線",
+      "lang": "ja",
+      "tz": "Asia/Tokyo",
+      "ir_url": "https://www.fujikura.co.jp/ir/",
+      "sources": [
+        {
+          "url": "https://www.fujikura.co.jp/ir/ir-calendar/",
+          "render": true
+        }
+      ]
+    },
+    {
+      "id": "5801",
+      "name": "古河電工",
+      "name_en": "Furukawa Electric",
+      "market": "JP",
+      "role": "related",
+      "category": "光・電線",
+      "lang": "ja",
+      "tz": "Asia/Tokyo",
+      "ir_url": "https://www.furukawaelectric.com/ir/",
+      "sources": [
+        {
+          "url": "https://www.furukawaelectric.com/ir/stock/event.html"
+        }
+      ]
+    },
+    {
+      "id": "5802",
+      "name": "住友電工",
+      "name_en": "Sumitomo Electric",
+      "market": "JP",
+      "role": "related",
+      "category": "光・電線",
+      "lang": "ja",
+      "tz": "Asia/Tokyo",
+      "ir_url": "https://sumitomoelectric.com/jp/ir",
+      "sources": [
+        {
+          "url": "https://sumitomoelectric.com/jp/ir/calendar"
+        }
+      ]
+    },
+    {
+      "id": "4062",
+      "name": "イビデン",
+      "name_en": "Ibiden",
+      "market": "JP",
+      "role": "related",
+      "category": "基板・電子部品",
+      "lang": "ja",
+      "tz": "Asia/Tokyo",
+      "ir_url": "https://www.ibiden.co.jp/ir/",
+      "sources": [
+        {
+          "url": "https://www.ibiden.co.jp/ir/calendar/index.html"
+        }
+      ]
+    },
+    {
+      "id": "2802",
+      "name": "味の素",
+      "name_en": "Ajinomoto",
+      "market": "JP",
+      "role": "related",
+      "category": "基板・電子部品",
+      "lang": "ja",
+      "tz": "Asia/Tokyo",
+      "ir_url": "https://www.ajinomoto.co.jp/company/jp/ir/",
+      "sources": [
+        {
+          "url": "https://www.ajinomoto.co.jp/company/jp/ir/event/ircalendar.html"
+        }
+      ]
+    },
+    {
+      "id": "6981",
+      "name": "村田製作所",
+      "name_en": "Murata Manufacturing",
+      "market": "JP",
+      "role": "related",
+      "category": "基板・電子部品",
+      "lang": "ja",
+      "tz": "Asia/Tokyo",
+      "ir_url": "https://corporate.murata.com/ja-jp/ir",
+      "sources": [
+        {
+          "url": "https://corporate.murata.com/ja-jp/ir/calendar"
+        }
+      ]
+    },
+    {
+      "id": "6501",
+      "name": "日立製作所",
+      "name_en": "Hitachi",
+      "market": "JP",
+      "role": "related",
+      "category": "電力・冷却",
+      "lang": "ja",
+      "tz": "Asia/Tokyo",
+      "ir_url": "https://www.hitachi.com/ja-jp/ir/",
+      "sources": [
+        {
+          "url": "https://www.hitachi.com/ja-jp/ir/library/fr/"
+        }
+      ]
+    },
+    {
+      "id": "3110",
+      "name": "日東紡",
+      "name_en": "Nittobo",
+      "market": "JP",
+      "role": "related",
+      "category": "基板・電子部品",
+      "lang": "ja",
+      "tz": "Asia/Tokyo",
+      "ir_url": "https://www.nittobo.co.jp/ir/",
+      "sources": [
+        {
+          "url": "https://www.nittobo.co.jp/ir/calender.htm"
+        }
+      ]
+    },
+    {
+      "id": "6762",
+      "name": "TDK",
+      "name_en": "TDK",
+      "market": "JP",
+      "role": "related",
+      "category": "基板・電子部品",
+      "lang": "ja",
+      "tz": "Asia/Tokyo",
+      "ir_url": "https://www.tdk.com/ja/ir/",
+      "sources": [
+        {
+          "url": "https://www.tdk.com/ja/ir/ir_events/calendar/index.html"
+        }
+      ]
+    },
+    {
+      "id": "7729",
+      "name": "東京精密",
+      "name_en": "Tokyo Seimitsu",
+      "market": "JP",
+      "role": "related",
+      "category": "製造装置",
+      "lang": "ja",
+      "tz": "Asia/Tokyo",
+      "ir_url": "https://www.accretech.com/jp/ir/",
+      "sources": [
+        {
+          "url": "https://www.accretech.com/jp/ir/calendar.html"
+        }
+      ]
+    },
+    {
+      "id": "6361",
+      "name": "荏原製作所",
+      "name_en": "Ebara",
+      "market": "JP",
+      "role": "related",
+      "category": "製造装置",
+      "lang": "ja",
+      "tz": "Asia/Tokyo",
+      "ir_url": "https://www.ebara.com/jp-ja/ir/",
+      "sources": [
+        {
+          "url": "https://www.ebara.com/jp-ja/ir/support/events/"
+        }
+      ]
+    },
+    {
+      "id": "6315",
+      "name": "TOWA",
+      "name_en": "TOWA",
+      "market": "JP",
+      "role": "related",
+      "category": "製造装置",
+      "lang": "ja",
+      "tz": "Asia/Tokyo",
+      "ir_url": "https://www.towajapan.co.jp/jp/ir/",
+      "sources": [
+        {
+          "url": "https://www.towajapan.co.jp/jp/ir/calender/"
+        }
+      ]
+    },
+    {
+      "id": "6871",
+      "name": "日本マイクロニクス",
+      "name_en": "Micronics Japan",
+      "market": "JP",
+      "role": "related",
+      "category": "製造装置",
+      "lang": "ja",
+      "tz": "Asia/Tokyo",
+      "ir_url": "https://www.mjc.co.jp/ir/",
+      "sources": [
+        {
+          "url": "https://www.mjc.co.jp/ir/ir_calendar/"
+        }
+      ]
+    },
+    {
+      "id": "4004",
+      "name": "レゾナック",
+      "name_en": "Resonac",
+      "market": "JP",
+      "role": "related",
+      "category": "メモリ・素材",
+      "lang": "ja",
+      "tz": "Asia/Tokyo",
+      "ir_url": "https://www.resonac.com/jp/ir/",
+      "sources": [
+        {
+          "url": "https://www.resonac.com/jp/ir"
+        }
+      ]
+    },
+    {
+      "id": "4186",
+      "name": "東京応化工業",
+      "name_en": "Tokyo Ohka Kogyo",
+      "market": "JP",
+      "role": "related",
+      "category": "メモリ・素材",
+      "lang": "ja",
+      "tz": "Asia/Tokyo",
+      "ir_url": "https://www.tok.co.jp/ir",
+      "sources": [
+        {
+          "url": "https://www.tok.co.jp/ir/calender"
+        }
+      ]
+    },
+    {
+      "id": "5016",
+      "name": "JX金属",
+      "name_en": "JX Advanced Metals",
+      "market": "JP",
+      "role": "related",
+      "category": "メモリ・素材",
+      "lang": "ja",
+      "tz": "Asia/Tokyo",
+      "ir_url": "https://www.jx-nmm.com/ir/",
+      "sources": [
+        {
+          "url": "https://www.jx-nmm.com/ir/calendar.html"
+        }
+      ]
+    },
+    {
+      "id": "5805",
+      "name": "SWCC",
+      "name_en": "SWCC",
+      "market": "JP",
+      "role": "related",
+      "category": "光・電線",
+      "lang": "ja",
+      "tz": "Asia/Tokyo",
+      "ir_url": "https://www.swcc.co.jp/jpn/ir/",
+      "sources": [
+        {
+          "url": "https://www.swcc.co.jp/jpn/ir/meeting/calendar.html"
+        }
+      ]
+    },
+    {
+      "id": "6503",
+      "name": "三菱電機",
+      "name_en": "Mitsubishi Electric",
+      "market": "JP",
+      "role": "related",
+      "category": "電力・冷却",
+      "lang": "ja",
+      "tz": "Asia/Tokyo",
+      "ir_url": "https://www.mitsubishielectric.co.jp/investors/",
+      "sources": [
+        {
+          "url": "https://www.mitsubishielectric.co.jp/investors/"
+        }
+      ]
+    },
+    {
+      "id": "6504",
+      "name": "富士電機",
+      "name_en": "Fuji Electric",
+      "market": "JP",
+      "role": "related",
+      "category": "電力・冷却",
+      "lang": "ja",
+      "tz": "Asia/Tokyo",
+      "ir_url": "https://www.fujielectric.co.jp/ir/",
+      "sources": [
+        {
+          "url": "https://www.fujielectric.co.jp/ir/other/index12.html"
+        }
+      ]
+    },
+    {
+      "id": "3778",
+      "name": "さくらインターネット",
+      "name_en": "SAKURA internet",
+      "market": "JP",
+      "role": "related",
+      "category": "AIの買い手",
+      "lang": "ja",
+      "tz": "Asia/Tokyo",
+      "ir_url": "https://www.sakura.ad.jp/corporate/ir/",
+      "sources": [
+        {
+          "url": "https://www.sakura.ad.jp/corporate/ir/calendar"
+        }
+      ]
+    }
+  ]
+}
