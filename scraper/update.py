@@ -8,6 +8,7 @@ from __future__ import annotations
 
 import argparse
 import json
+import re
 import sys
 from datetime import date, datetime, timedelta, timezone
 from pathlib import Path
@@ -34,17 +35,17 @@ def collect(company: dict, today: date) -> tuple[list[Candidate], str, str]:
             if src.get("follow"):
                 # 一覧ページは表示が必要でも、記事ページ自体は普通のHTMLで読めることが多い
                 for link in find_follow_links(html, src["follow"], src["url"]):
-                    pages.append((link, fetch.get(link, render=src.get("render_follow", False))))
-            cands: list[Candidate] = []
-            used = src["url"]
+                    try:
+                        pages.append((link, fetch.get(link, render=src.get("render_follow", False))))
+                    except fetch.FetchError as e:
+                        # 記事が1本読めなくても、他の記事や一覧ページで続ける
+                        print(f"    記事を読めませんでした: {e}", file=sys.stderr)
+            per_page: list[tuple[str, list[Candidate]]] = []
             for url, page in pages:
                 found = extract_candidates(html_to_lines(page), company["lang"], today,
                                            date_line=src.get("date_line", "before"))
-                for c in found:
-                    c.context = url  # どのページから取れたかを出典として残す
-                if found and used == src["url"] and url != src["url"]:
-                    used = url
-                cands += found
+                per_page.append((url, found))
+            cands, used = pick_candidates(per_page, src.get("follow"))
             if cands:
                 return cands, used, f"{len(cands)}件の日付を取得"
             errors.append(f"{src['url']}: 決算の日付が見つかりません")
@@ -54,6 +55,30 @@ def collect(company: dict, today: date) -> tuple[list[Candidate], str, str]:
 
 
 # ---------- データの合成（ネットワークなしでテストできる部分） ----------
+
+def pick_candidates(per_page: list[tuple[str, list[Candidate]]], follow: str | None) -> tuple[list[Candidate], str]:
+    """ページごとの候補から、使う候補と出典URLを選ぶ。per_page の先頭は一覧ページ。
+    follow がある場合、一覧ページに並ぶ「◯◯ Sets Conference Call」などの見出しの日付は
+    記事の掲載日であって決算日ではない。そこで記事ページから日付が取れたら記事の分だけを使い、
+    取れなかったときだけ、見出し（follow に一致する行）を除いた一覧ページの日付を使う。"""
+    list_url, list_cands = per_page[0]
+    if follow:
+        articles = [(u, cs) for u, cs in per_page[1:] if cs]
+        if articles:
+            chosen = [(u, c) for u, cs in articles for c in cs]
+            used = articles[0][0]
+        else:
+            rx = re.compile(follow, re.I)
+            chosen = [(list_url, c) for c in list_cands if not rx.search(c.context)]
+            used = list_url
+    else:
+        chosen = [(list_url, c) for c in list_cands]
+        used = list_url
+    for url, c in chosen:
+        c.context = url  # どのページから取れたかを出典として残す
+    return [c for _, c in chosen], used
+
+
 
 def to_jst(d: str, t: str | None, tz: str) -> str | None:
     if not t:

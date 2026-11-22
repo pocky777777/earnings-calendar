@@ -624,18 +624,6 @@
       "jst": "2025-10-29T16:00"
     },
     {
-      "company": "NVDA",
-      "date": "2025-10-29",
-      "time": null,
-      "tz": "America/Los_Angeles",
-      "label": "Q3",
-      "status": "done",
-      "approx": null,
-      "source": "https://nvidianews.nvidia.com/news?q=Sets%20Conference%20Call",
-      "checked_at": "2026-11-22T17:34:32Z",
-      "jst": null
-    },
-    {
       "company": "4062",
       "date": "2025-10-30",
       "time": "15:40",
@@ -983,18 +971,6 @@
       "source": "https://investor.lamresearch.com/events/",
       "checked_at": "2026-11-22T17:34:32Z",
       "jst": "2026-01-29T07:00"
-    },
-    {
-      "company": "NVDA",
-      "date": "2026-01-28",
-      "time": null,
-      "tz": "America/Los_Angeles",
-      "label": "Q4",
-      "status": "done",
-      "approx": null,
-      "source": "https://nvidianews.nvidia.com/news?q=Sets%20Conference%20Call",
-      "checked_at": "2026-11-22T17:34:32Z",
-      "jst": null
     },
     {
       "company": "6501",
@@ -1540,18 +1516,6 @@
       "jst": null
     },
     {
-      "company": "NVDA",
-      "date": "2026-04-29",
-      "time": null,
-      "tz": "America/Los_Angeles",
-      "label": "Q1",
-      "status": "done",
-      "approx": null,
-      "source": "https://nvidianews.nvidia.com/news?q=Sets%20Conference%20Call",
-      "checked_at": "2026-11-22T17:34:32Z",
-      "jst": null
-    },
-    {
       "company": "6920",
       "date": "2026-04-30",
       "time": null,
@@ -1854,18 +1818,6 @@
       "jst": "2026-05-29T05:30"
     },
     {
-      "company": "GOOGL",
-      "date": "2026-07-08",
-      "time": null,
-      "tz": "America/Los_Angeles",
-      "label": "Q2 2026",
-      "status": "done",
-      "approx": null,
-      "source": "https://abc.xyz/investor/",
-      "checked_at": "2026-11-22T17:34:32Z",
-      "jst": null
-    },
-    {
       "company": "TSM",
       "date": "2026-07-16",
       "time": null,
@@ -2009,18 +1961,6 @@
       "source": "https://investor.atmeta.com/investor-events/default.aspx",
       "checked_at": "2026-11-21T11:19:47Z",
       "jst": "2026-07-30T05:30"
-    },
-    {
-      "company": "NVDA",
-      "date": "2026-07-29",
-      "time": null,
-      "tz": "America/Los_Angeles",
-      "label": "Q2",
-      "status": "done",
-      "approx": null,
-      "source": "https://nvidianews.nvidia.com/news?q=Sets%20Conference%20Call",
-      "checked_at": "2026-11-22T17:34:32Z",
-      "jst": null
     },
     {
       "company": "SKHY",
@@ -2457,18 +2397,6 @@
       "jst": null
     },
     {
-      "company": "GOOGL",
-      "date": "2026-10-06",
-      "time": null,
-      "tz": "America/Los_Angeles",
-      "label": "Q3 2026",
-      "status": "done",
-      "approx": null,
-      "source": "https://abc.xyz/investor/",
-      "checked_at": "2026-11-22T17:34:32Z",
-      "jst": null
-    },
-    {
       "company": "ASML",
       "date": "2026-10-14",
       "time": null,
@@ -2622,18 +2550,6 @@
       "status": "done",
       "approx": null,
       "source": "https://www.microsoft.com/en-us/investor",
-      "checked_at": "2026-11-22T17:34:32Z",
-      "jst": null
-    },
-    {
-      "company": "NVDA",
-      "date": "2026-10-28",
-      "time": null,
-      "tz": "America/Los_Angeles",
-      "label": "Q3",
-      "status": "done",
-      "approx": null,
-      "source": "https://nvidianews.nvidia.com/news?q=Sets%20Conference%20Call",
       "checked_at": "2026-11-22T17:34:32Z",
       "jst": null
     },
@@ -3053,7 +2969,7 @@
       "jst": "2026-11-18T07:00",
       "label": "Q3 FY2027",
       "status": "done",
-      "source": "https://nvidianews.nvidia.com/news/nvidia-sets-conference-call-for-first-quarter-financial-results-6919947",
+      "source": "https://nvidianews.nvidia.com/news/nvidia-sets-conference-call-for-third-quarter-financial-results-6928873",
       "checked_at": "2026-11-22T17:34:32Z",
       "seed": true,
       "approx": null
@@ -3248,18 +3164,6 @@
       "status": "estimated",
       "basis": "前回の決算から約3か月ごとと推定",
       "source": "https://www.microsoft.com/en-us/investor",
-      "checked_at": null
-    },
-    {
-      "company": "NVDA",
-      "date": "2027-01-27",
-      "time": null,
-      "tz": "America/Los_Angeles",
-      "jst": null,
-      "label": null,
-      "status": "estimated",
-      "basis": "前年同期（2026-01-28）と同じ時期と推定",
-      "source": "https://investor.nvidia.com/",
       "checked_at": null
     },
     {
@@ -3717,6 +3621,18 @@
       "source": "https://www.accretech.com/jp/ir/calendar.html",
       "checked_at": "2026-11-22T17:34:32Z",
       "jst": null
+    },
+    {
+      "company": "NVDA",
+      "date": "2027-02-24",
+      "time": null,
+      "tz": "America/Los_Angeles",
+      "jst": null,
+      "label": null,
+      "status": "estimated",
+      "basis": "前年同期（2026-02-25）と同じ時期と推定",
+      "source": "https://investor.nvidia.com/",
+      "checked_at": null
     }
   ],
   "status": {
