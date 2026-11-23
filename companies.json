@@ -58,7 +58,9 @@
         {
           "url": "https://investors.broadcom.com/company-information/events-presentations"
         }
-      ]
+      ],
+      "manual": true,
+      "manual_reason": "自動取得プログラムからのアクセスを会社のサイトが断っているため、manual_dates.json に手で書く（2026-11-23 確認）"
     },
     {
       "id": "TSM",
@@ -72,7 +74,8 @@
       "ir_url": "https://investor.tsmc.com/english",
       "sources": [
         {
-          "url": "https://investor.tsmc.com/english/financial-calendar"
+          "url": "https://investor.tsmc.com/english/financial-calendar",
+          "render": true
         }
       ]
     },
@@ -90,7 +93,9 @@
         {
           "url": "https://investor.asml.com/quarterly-results"
         }
-      ]
+      ],
+      "manual": true,
+      "manual_reason": "自動取得プログラムからのアクセスを会社のサイトが断っているため、manual_dates.json に手で書く（2026-11-23 確認）"
     },
     {
       "id": "AMAT",
@@ -106,7 +111,9 @@
         {
           "url": "https://ir.appliedmaterials.com/events-and-presentations"
         }
-      ]
+      ],
+      "manual": true,
+      "manual_reason": "自動取得プログラムからのアクセスを会社のサイトが断っているため、manual_dates.json に手で書く（2026-11-23 確認）"
     },
     {
       "id": "LRCX",
@@ -208,7 +215,9 @@
           "url": "https://investor.atmeta.com/investor-events/default.aspx",
           "render": true
         }
-      ]
+      ],
+      "manual": true,
+      "manual_reason": "自動取得プログラムからのアクセスを会社のサイトが断っているため、manual_dates.json に手で書く（2026-11-23 確認）"
     },
     {
       "id": "AMZN",
@@ -243,7 +252,9 @@
           "url": "https://investor.oracle.com/events-and-presentations/default.aspx",
           "render": true
         }
-      ]
+      ],
+      "manual": true,
+      "manual_reason": "自動取得プログラムからのアクセスを会社のサイトが断っているため、manual_dates.json に手で書く（2026-11-23 確認）"
     },
     {
       "id": "DELL",
@@ -738,7 +749,9 @@
         {
           "url": "https://www.tdk.com/ja/ir/ir_events/calendar/index.html"
         }
-      ]
+      ],
+      "manual": true,
+      "manual_reason": "自動取得プログラムからのアクセスを会社のサイトが断っているため、manual_dates.json に手で書く（2026-11-23 確認）"
     },
     {
       "id": "7729",
@@ -770,7 +783,9 @@
         {
           "url": "https://www.ebara.com/jp-ja/ir/support/events/"
         }
-      ]
+      ],
+      "manual": true,
+      "manual_reason": "自動取得プログラムからのアクセスを会社のサイトが断っているため、manual_dates.json に手で書く（2026-11-23 確認）"
     },
     {
       "id": "6315",

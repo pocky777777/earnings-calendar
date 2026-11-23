@@ -2,6 +2,8 @@
 
 使い方（GitHub の Actions →「取得元の診断」→ Run workflow）:
     python -m scripts.diagnose
+自分のパソコンから、指定した会社の今の設定（普通の読み方とブラウザ表示の両方）だけを試す:
+    python -m scripts.diagnose --ids AVGO,ASML,AMAT,6762,6361,META,ORCL
 
 robots.txt を守り、1ページごとに3秒あけるのは通常の取得と同じ。名乗り（User-Agent）も変えない。
 結果は表にして標準出力と、GitHub Actions の実行画面（Summary）に書く。データは更新しない。
@@ -22,6 +24,10 @@ TARGETS = Path(__file__).with_name("diagnose_targets.json")
 JST = ZoneInfo("Asia/Tokyo")
 
 
+def html_to_text(html: str) -> str:
+    return "\n".join(html_to_lines(html))
+
+
 def try_source(src: dict, lang: str, today: date) -> dict:
     """1つの取得元を試し、結果（読めたか・日付が取れたか）を返す。例外は外に出さない。"""
     res = {"result": "", "dates": ""}
@@ -32,6 +38,8 @@ def try_source(src: dict, lang: str, today: date) -> dict:
         return res
     pages = [(src["url"], html)]
     notes = []
+    if src.get("render") and fetch._LOADING.search(html_to_text(html)):
+        notes.append("表示が「読み込み中」のまま")
     if src.get("follow"):
         links = find_follow_links(html, src["follow"], src["url"])
         notes.append(f"記事{len(links)}本")
@@ -59,10 +67,17 @@ def try_source(src: dict, lang: str, today: date) -> dict:
     return res
 
 
-def main() -> int:
+def main(argv: list[str] | None = None) -> int:
+    import argparse
+    ap = argparse.ArgumentParser()
+    ap.add_argument("--ids", help="この会社だけ、今の設定を普通の読み方とブラウザ表示で試す（カンマ区切り）")
+    args = ap.parse_args(argv)
     today = datetime.now(JST).date()
     config = {c["id"]: c for c in json.loads(CONFIG.read_text(encoding="utf-8"))["companies"]}
     targets = json.loads(TARGETS.read_text(encoding="utf-8"))
+    if args.ids:
+        ids = [i.strip() for i in args.ids.split(",") if i.strip()]
+        targets = {"include_configured": ids, "render_variant_for": ids, "candidates": []}
 
     jobs = []
     for cid in targets["include_configured"]:

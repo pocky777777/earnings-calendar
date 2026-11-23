@@ -442,7 +442,8 @@
     const body = state.data.companies.filter((c) => companyVisible(c)).map((c) => {
       const st = state.data.status?.[c.id] || {};
       const next = nextEventOf(c.id, today);
-      const okCell = st.ok === true ? el("span", { class: "ok", title: st.message || "" }, "成功")
+      const okCell = st.manual ? el("span", { class: "na", title: "会社のサイトが自動取得を断っているため、会社の発表を見て手で入力しています" }, "手入力")
+        : st.ok === true ? el("span", { class: "ok", title: st.message || "" }, "成功")
         : st.ok === false ? el("span", { class: "ng", title: st.message || "" }, "失敗（前回の値を表示中）")
         : el("span", { class: "na", title: st.message || "" }, "未実行");
       return el("tr", {},

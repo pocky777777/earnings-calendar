@@ -1,20 +1,25 @@
 {
   "_説明": "GitHub Actions 上で読めるかを試す取得元の候補。companies.json の現在の設定に加えて試す。結果は Actions の実行画面（Summary）に表で出る。",
-  "include_configured": ["AVGO", "TSM", "ASML", "AMAT", "COHR", "SNDK", "6762", "6361", "6526", "META", "ORCL", "CRDO"],
-  "render_variant_for": ["AVGO", "TSM", "ASML", "AMAT", "COHR", "SNDK", "6762", "6361"],
+  "include_configured": [
+    "TSM",
+    "6526",
+    "CRDO"
+  ],
+  "render_variant_for": [],
   "candidates": [
-    {"id": "AVGO", "note": "会社サイトの決算リリース一覧", "url": "https://www.broadcom.com/company/news/financial-releases", "follow": "to Announce .*Financial Results"},
-    {"id": "AVGO", "note": "PR Newswire の会社ページ", "url": "https://www.prnewswire.com/news/broadcom-inc/", "follow": "to Announce .*Financial Results"},
-    {"id": "TSM", "note": "TSMC のニュースルーム", "url": "https://pr.tsmc.com/english/latest-news", "follow": "Conference|Earnings"},
-    {"id": "ASML", "note": "ASML 本体サイトの財務カレンダー", "url": "https://www.asml.com/en/investors/financial-calendar"},
-    {"id": "ASML", "note": "ASML 本体サイトのプレスリリース", "url": "https://www.asml.com/en/news/press-releases"},
-    {"id": "AMAT", "note": "会社サイトのニュースルーム", "url": "https://www.appliedmaterials.com/us/en/newsroom/press-releases.html", "follow": "to Report .*Results"},
-    {"id": "AMAT", "note": "IRサイトのニュース一覧", "url": "https://ir.appliedmaterials.com/news-releases", "follow": "to Report .*Results"},
-    {"id": "COHR", "note": "会社サイトのプレスリリース", "url": "https://www.coherent.com/news/press-releases", "follow": "Timing of|Conference Call Announced"},
-    {"id": "SNDK", "note": "会社サイトのプレスリリース", "url": "https://www.sandisk.com/company/newsroom/press-releases", "follow": "to Report .*Results"},
-    {"id": "6762", "note": "TDK 英語版IRカレンダー", "url": "https://www.tdk.com/en/ir/ir_events/calendar/index.html", "lang": "en"},
-    {"id": "6762", "note": "TDK IRトップ", "url": "https://www.tdk.com/ja/ir/index.html"},
-    {"id": "6361", "note": "荏原 英語版IRイベント", "url": "https://www.ebara.com/jp-en/ir/support/events/", "lang": "en"},
-    {"id": "6361", "note": "荏原 IRトップ", "url": "https://www.ebara.com/jp-ja/ir/"}
+    {
+      "id": "COHR",
+      "note": "会社サイトのプレスリリース",
+      "url": "https://www.coherent.com/news/press-releases",
+      "render": true,
+      "follow": "Timing of|Conference Call Announced"
+    },
+    {
+      "id": "SNDK",
+      "note": "会社サイトのプレスリリース",
+      "url": "https://www.sandisk.com/company/newsroom/press-releases",
+      "render": true,
+      "follow": "to Report .*Results"
+    }
   ]
 }

@@ -20,6 +20,7 @@ from .extract import Candidate, extract_candidates, find_follow_links, html_to_l
 ROOT = Path(__file__).resolve().parent.parent
 CONFIG = ROOT / "companies.json"
 DATA = ROOT / "docs" / "data" / "earnings.json"
+MANUAL = ROOT / "manual_dates.json"   # 自動取得を断っている会社の日付を手で書くファイル
 JST = ZoneInfo("Asia/Tokyo")
 
 
@@ -169,6 +170,25 @@ def estimate(events: list[dict], company: dict, today: date) -> list[dict]:
 
 # ---------- メイン ----------
 
+def load_manual(path: Path = MANUAL) -> dict[str, list[Candidate]]:
+    """manual_dates.json を読んで、会社ごとの候補にする。
+    会社が発表した日付を、出典（プレスリリースなど）のURLと一緒に人が書き足すファイル。"""
+    if not path.exists():
+        return {}
+    out: dict[str, list[Candidate]] = {}
+    for row in json.loads(path.read_text(encoding="utf-8")).get("dates", []):
+        out.setdefault(row["company"], []).append(Candidate(
+            date=date.fromisoformat(row["date"]),
+            time=row.get("time"),
+            tz=row.get("tz"),
+            label=row.get("label"),
+            approx=row.get("approx"),
+            context=row.get("source", ""),
+            primary=True,
+        ))
+    return out
+
+
 def run(dry_run: bool = False, today: date | None = None) -> int:
     today = today or datetime.now(JST).date()
     now = datetime.now(timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ")
@@ -176,9 +196,21 @@ def run(dry_run: bool = False, today: date | None = None) -> int:
     data = json.loads(DATA.read_text(encoding="utf-8")) if DATA.exists() else {"events": [], "status": {}}
     events, status = data.get("events", []), data.get("status", {})
 
+    manual = load_manual()
     failures = 0
     for company in config["companies"]:
         cid = company["id"]
+        if company.get("manual"):
+            # 自動取得を断っている会社には取りに行かない。手で書いた日付だけを使う
+            cands = manual.get(cid, [])
+            if cands:
+                events = merge(events, company, cands, today, now)
+            status[cid] = {"ok": True, "manual": True, "checked_at": now,
+                           "message": f"手入力（manual_dates.json）{len(cands)}件",
+                           "last_success": status.get(cid, {}).get("last_success")}
+            print(f"[手入力] {company['name']}: {len(cands)}件")
+            events = estimate(events, company, today)
+            continue
         try:
             cands, used, msg = collect(company, today)
             events = merge(events, company, cands, today, now)
@@ -203,7 +235,7 @@ def run(dry_run: bool = False, today: date | None = None) -> int:
     out = {
         "generated_at": now,
         "categories": config.get("categories", []),
-        "companies": [{k: v for k, v in c.items() if k not in ("sources", "lang")}
+        "companies": [{k: v for k, v in c.items() if k not in ("sources", "lang", "manual_reason")}
                       for c in config["companies"]],
         "events": sorted(events, key=lambda e: (e["date"], e["company"])),
         "status": status,

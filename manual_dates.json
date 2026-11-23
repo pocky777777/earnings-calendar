@@ -1,0 +1,21 @@
+{
+  "_説明": [
+    "自動取得を断っている会社（companies.json で \"manual\": true の会社）の決算日を、手で書き足すファイルです。",
+    "会社が決算日を発表したら、1行（1つの {}）を dates に足して push してください。その晩の自動更新でサイトに反映されます。",
+    "company: companies.json の id ／ date: 現地の日付 YYYY-MM-DD ／ time: 現地の時刻 HH:MM（分からなければ書かない）",
+    "tz: 時刻の時間帯（書かなければ会社の所在地。例 America/New_York, Europe/Amsterdam, Asia/Tokyo）",
+    "label: 決算の名前（例 Q4 FY2026, 2027年3月期 第3四半期）／ approx: 日付が未定で「1月下旬」などだけ出ているとき（date はその時期の中ほど）",
+    "source: 必ず会社の発表（プレスリリースやIRカレンダー）のURLを書く。サイトの「出典」リンクになります。",
+    "終わった決算の行は消さずに残してかまいません（実績として履歴に残ります）。"
+  ],
+  "dates": [
+    {
+      "company": "AVGO",
+      "date": "2026-12-09",
+      "time": "14:00",
+      "tz": "America/Los_Angeles",
+      "label": "Q4 FY2026",
+      "source": "https://investors.broadcom.com/news-releases/news-release-details/broadcom-inc-announce-fourth-quarter-and-fiscal-year-2026"
+    }
+  ]
+}
