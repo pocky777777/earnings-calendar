@@ -448,7 +448,7 @@
         : el("span", { class: "na", title: st.message || "" }, "未実行");
       return el("tr", {},
         el("td", { class: "mono" }, c.id),
-        el("td", {}, el("a", { href: c.ir_url, target: "_blank", rel: "noopener" }, c.name)),
+        el("td", {}, el("a", { href: `c/${encodeURIComponent(c.id)}.html` }, c.name)),
         el("td", {}, c.market === "US" ? "米国" : "日本"),
         el("td", {}, `${c.category}${c.role === "leader" ? "（けん引役）" : ""}`),
         el("td", {}, next ? [whenText(next), " ", badge(next)] : "—"),
@@ -472,6 +472,7 @@
     rows.push(["カテゴリ", `${c.category}・${c.role === "leader" ? "けん引役" : "関連株"}`]);
     rows.push(["出典", el("a", { href: ev.source || c.ir_url, target: "_blank", rel: "noopener" },
       ev.status === "estimated" ? "IRページで確認する" : "出典を開く")]);
+    rows.push(["くわしく", el("a", { href: `c/${encodeURIComponent(c.id)}.html` }, `${c.name}の決算発表日の一覧`)]);
     $("detail-body").replaceChildren(
       el("p", { class: "eyebrow" }, `${c.id} ・ ${c.name_en} ・ ${c.market === "US" ? "米国" : "日本"}`),
       el("h3", { id: "detail-title" }, c.name, " ", badge(ev)),
