@@ -101,7 +101,7 @@ def merge(events: list[dict], company: dict, cands: list[Candidate], today: date
 
     future_new = {c.date.isoformat(): c for c in cands if c.date >= today and c.scheduled}
     if future_new:
-        by_date = {k: v for k, v in by_date.items() if date.fromisoformat(k) < today}
+        by_date = {k: v for k, v in by_date.items() if date.fromisoformat(k) < today or k in future_new}
 
     for c in cands:
         key = c.date.isoformat()
